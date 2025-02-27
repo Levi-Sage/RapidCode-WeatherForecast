@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #232526, #414345);
+    overflow: hidden;
+}
+
+/* Background Elements */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 160px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(5px);
+    animation: moveClouds 10s infinite linear;
+}
+
+.cloud1 { top: 15%; left: 5%; animation-duration: 14s; }
+.cloud2 { top: 35%; left: 45%; animation-duration: 12s; }
+.cloud3 { top: 55%; left: 75%; animation-duration: 16s; }
+
+@keyframes moveClouds {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(120vw); }
+}
+
+/* Lightning Effect */
+.lightning {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+    animation: flash 10s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.6; }
+}
+
+/* Signup Form */
+.signup-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    animation: fadeIn 1.5s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #ffaa00;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
