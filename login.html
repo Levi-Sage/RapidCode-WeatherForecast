@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Weather Login</title>
+    <link rel="stylesheet" href="login3.css">
+    <script src="login3.js" defer></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="background">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="rain"></div>
+    </div>
+
     <div class="login-container">
         <form id="loginForm">
-            <h2>Login <i class="fa-solid fa-cloud-moon-rain"></i> </h2>
+            <h2>Login <i class="fa-solid fa-cloud-moon-rain"></i></h2>
 
             <div class="input-group">
                 <label for="username">Username</label>
@@ -21,27 +31,12 @@
             </div>
 
             <div class="button-group">
-                <button id="submit-btn" type="submit">Login</button>
-                
+                <button id="submit-btn" type="submit">
+                    <span class="btn-text">Login</span>
+                    <span class="loading"></span>
+                </button>
             </div> 
         </form>
     </div>
-
-    <script>
-        const username = document.getElementById("username");
-        const password = document.getElementById("password");
-        const submit_btn = document.getElementById("submit-btn");
-
-        function validateLogin(event) {
-            event.preventDefault();
-            if (username.value !== "" && password.value === "password123") {
-                window.location.href = '/today.html';
-            } else {
-                alert("Error! Invalid username or password.");
-            }
-        }
-
-        submit_btn.addEventListener("click", validateLogin);
-    </script>
 </body>
 </html>
